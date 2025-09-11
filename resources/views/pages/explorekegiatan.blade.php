@@ -151,38 +151,38 @@
         }
         
         .event-card-1 { 
-            background: linear-gradient(135deg, rgba(255,69,0,0.9) 0%, rgba(255,140,0,0.8) 100%),
-                        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRkY0NTAwIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMzAiIGZpbGw9IiNGRkQ3MDAiIG9wYWNpdHk9IjAuNyIvPgo8Y2lyY2xlIGN4PSIzMDAiIGN5PSIyMDAiIHI9IjQwIiBmaWxsPSIjRkZENzAwIiBvcGFjaXR5PSIwLjUiLz4KPC9zdmc+');
+            background: linear-gradient(135deg, rgba(255, 68, 0, 0.12) 0%, rgba(255, 140, 0, 0) 100%),
+                        url('/assets/img/Beranda -  Festival Ekonomi Kreatif & Pekan HAM.png');
             background-size: cover; 
         }
         
         .event-card-2 { 
-            background: linear-gradient(135deg, rgba(220,38,38,0.9) 0%, rgba(185,28,28,0.8) 100%),
-                        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjREMyNjI2Ii8+CjxwYXRoIGQ9Ik0xMDAsMTAwIEwxNTAsNTAgTDIwMCwxMDAgTDE1MCwxNTAgWiIgZmlsbD0iI0ZCQkYyNCIgb3BhY2l0eT0iMC43Ii8+Cjwvdmc+');
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0) 0%, rgba(185, 28, 28, 0) 100%),
+                        url('/assets/img/Beranda -  Ngubek Setu.png');
             background-size: cover; 
         }
         
         .event-card-3 { 
-            background: linear-gradient(135deg, rgba(34,197,94,0.9) 0%, rgba(21,128,61,0.8) 100%),
-                        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMjJDNTVFIi8+CjxyZWN0IHg9IjUwIiB5PSI1MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGQkJGMjQiIG9wYWNpdHk9IjAuMyIvPgo8L3N2Zz4=');
-            background-size: cover; 
-        }
-        
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0) 0%, rgba(21, 128, 60, 0) 100%),
+                        url('/assets/img/Beranda -  Festival Ekonomi Kreatif & Pekan HAM.png');            
+                        background-size: cover; 
+                    }
+                    
         .event-card-4 { 
-            background: linear-gradient(135deg, rgba(59,130,246,0.9) 0%, rgba(37,99,235,0.8) 100%),
-                        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjM0I4MkY2Ii8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZCQkYyNCIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIwLjciLz4KPC9zdmc+');
+            background: linear-gradient(135deg, rgba(59, 131, 246, 0) 0%, rgba(37, 100, 235, 0) 100%),
+            url('/assets/img/Beranda -  Lukis Alam (Melukis di Tepi Danau).png');            
             background-size: cover; 
         }
         
         .event-card-5 { 
-            background: linear-gradient(135deg, rgba(168,85,247,0.9) 0%, rgba(147,51,234,0.8) 100%),
-                        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjQTg1NUY3Ii8+CjxwYXRoIGQ9Ik0wLDMwMCBRMjAwLDEwMCA0MDAsMzAwIiBmaWxsPSIjRkJCRjI0IiBvcGFjaXR5PSIwLjMiLz4KPC9zdmc+');
+            background: linear-gradient(135deg, rgba(169, 85, 247, 0) 0%, rgba(146, 51, 234, 0) 100%),
+            url('/assets/img/Beranda -  Yoga & Meditasi.png');            
             background-size: cover; 
         }
         
         .event-card-6 { 
-            background: linear-gradient(135deg, rgba(245,158,11,0.9) 0%, rgba(217,119,6,0.8) 100%),
-                        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjU5RTBCIi8+CjxzdGFyIGN4PSIyMDAiIGN5PSIxNTAiIHI9IjUwIiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIwLjQiLz4KPC9zdmc+');
+            background: linear-gradient(135deg, rgba(245, 159, 11, 0) 0%, rgba(217, 119, 6, 0) 100%),
+            url('/assets/img/Beranda -  Hunting Foto & Videografi.png');            
             background-size: cover; 
         }
         
@@ -314,7 +314,7 @@
             </div>
             
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-3 d-none">
                     <div class="filter-sidebar">
                         <h5 class="filter-title">Event Date</h5>
                         <div class="month-checkbox">
@@ -372,13 +372,14 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-9">
+                <div class="col-lg-9 mx-auto">
                     <div class="row" id="eventsContainer">
                         <!-- Example dengan loop -->
                         @foreach ($events as $idx => $e)
                         <div class="col-lg-4 col-md-6">
                             <div class="event-card event-card-{{ ($idx % 6) + 1 }}" data-month="{{ $e['month'] ?? 'desember' }}" style="position:relative;">
                                 <a href="{{ route('kegiatan.detail', $e['slug']) }}" class="event-card-link" aria-label="Buka detail {{ $e['title'] }}"></a>
+                                
                                 <div class="card-body">
                                     <h5>{{ $e['title'] }}</h5>
                                     <p class="date">{{ $e['date'] }}</p>

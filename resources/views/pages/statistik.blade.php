@@ -2,8 +2,8 @@
 
 @section('title', 'Statistik & Fakta')
 @push('styles')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
         :root {
@@ -104,7 +104,10 @@
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin-bottom: 30px;
+            position: relative;
+            height: 350px;
         }
+        .chart-container canvas { display: block; width: 100% !important; height: 90% !important; }
 
         .visitor-chart {
             height: 300px;
@@ -130,6 +133,8 @@
         }
 
         .event-stats {
+            position: relative;
+            height: 350px;
             background: white;
             border-radius: 15px;
             padding: 30px;
@@ -289,7 +294,7 @@
                 </div>
             </div>
             
-            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="col-lg-3 col-md-6 mb-4 d-none" data-aos="fade-up" data-aos-delay="400">
                 <div class="stat-card">
                     <div class="stat-number" data-target="120">0</div>
                     <div class="stat-label">Event & Festival</div>
@@ -307,7 +312,7 @@
                         <i class="fas fa-chart-line text-primary me-2"></i>
                         Rata-rata Pengunjung (2018-2025)
                     </h4>
-                    <canvas id="visitorChart" height="100"></canvas>
+                    <canvas id="visitorChart"></canvas>
                 </div>
             </div>
             
@@ -318,7 +323,7 @@
                         <i class="fas fa-store text-success me-2"></i>
                         Statistik UMKM Sekitar Danau
                     </h4>
-                    <canvas id="umkmChart" height="200"></canvas>
+                    <canvas id="umkmChart" ></canvas>
                     
                     <div class="mt-4">
                         <h6><i class="fas fa-calendar-check text-warning me-2"></i>Event & Sosial</h6>
@@ -343,7 +348,7 @@
                         <i class="fas fa-chart-pie text-info me-2"></i>
                         Distribusi Event Tahunan
                     </h5>
-                    <canvas id="eventChart" height="150"></canvas>
+                    <canvas id="eventChart"></canvas>
                 </div>
             </div>
             
