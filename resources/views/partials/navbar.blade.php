@@ -14,18 +14,15 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}#beranda" data-target-id="beranda">Beranda</a>
-                    </li>
+                    </li>   
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}#tentang" data-target-id="tentang">Tentang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('explore') }}" data-target-id="wisata">Wisata</a>
+                        <a class="nav-link" href="{{ route('statistik') }}" data-target-id="statistik">Statistik & Fakta</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}#fasilitas" data-target-id="fasilitas">Fasilitas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('statistik') }}" data-target-id="statistik">Statistik & Fakta</a>
+                        <a class="nav-link" href="{{ route('explore') }}" data-target-id="wisata">Wisata</a>
                     </li>
                 </ul>
                 

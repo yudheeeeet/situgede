@@ -151,7 +151,7 @@
             <h1 class="hero-title">Danau<br>Situgede</h1>
             <p class="hero-subtitle">Bogor, Jawa Barat, Indonesia</p>
         </div>
-    </section>
+    </section>  
 <!-- Activities Section -->
     <section class="activities-section" id="wisata">
         <div class="container">

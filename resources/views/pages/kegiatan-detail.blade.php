@@ -79,27 +79,55 @@
         }
         
         .festival-card {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            height: 200px;
-            margin-bottom: 20px;
-        }
-        
-        .festival-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
-        
-        .festival-card-1 {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-        }
-        
-        .festival-card-2 {
-            background: linear-gradient(45deg, #feca57, #ff9ff3);
-        }
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 200px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform .3s ease, box-shadow .3s ease;
+} /* [3] */
+
+.festival-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); } /* [4] */
+
+/* Gambar full-bleed */
+.festival-card .festival-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* isi penuh, crop proporsional */
+  object-position: center;  /* fokus tengah, bisa diubah per data */
+} /* [3] */
+
+/* Overlay gradasi di atas gambar */
+.festival-card .festival-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.85) 100%);
+  pointer-events: none;
+} /* [4] */
+
+/* Konten teks di bawah */
+.festival-card .festival-content {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 16px 18px;
+  color: #fff;
+} /* [4] */
+
+/* Aksen warna per varian (opsional) */
+.festival-card-1::before,
+.festival-card-2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+} /* [4] */
+
+.festival-card-1::before { background: radial-gradient(60% 60% at 0% 0%, rgba(255,107,107,.25), transparent), radial-gradient(60% 60% at 100% 0%, rgba(238,90,36,.25), transparent); } /* [4] */
+.festival-card-2::before { background: radial-gradient(60% 60% at 0% 0%, rgba(254,202,87,.25), transparent), radial-gradient(60% 60% at 100% 0%, rgba(255,159,243,.25), transparent); } /* [4] */
+
         
         .festival-card .card-body {
             position: absolute;
@@ -231,7 +259,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="mb-4">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNGRkRCMDAiLz48L3N2Zz4=" alt="{{ $event['title'] }}" class="event-image">
+                    <img src="{{ asset('/assets/img/Beranda -  Festival Ekonomi Kreatif & Pekan HAM.png') }}" alt="{{ $event['title'] }}" class="event-image">
                 </div>
 
                 <p class="event-description">
@@ -245,23 +273,43 @@
 
             <div class="col-lg-4">
                 <div class="event-card">
-                    <h5>Tanggal Kegiatan</h5>
-                    <div class="date">{{ $event['date'] }}</div>
+                    <h5>Jenis Wisata</h5>
+                    <h6>Jenis Wisata</h6>
+
+                    <div class="date d-none">{{ $event['date'] }}</div>
                     <div class="price">Harga Tiket<br><strong>{{ $event['price'] }}</strong></div>
                 </div>
 
                 <h4 class="text-primary fw-bold mb-3">Festival Lainnya</h4>
 
                 @foreach ($recommended as $slugRec => $rec)
-                    <a href="{{ route('kegiatan.detail', $slugRec) }}" class="text-decoration-none d-block mb-3">
-                        <div class="festival-card {{ $loop->iteration % 2 ? 'festival-card-1' : 'festival-card-2' }}">
-                            <div class="card-body">
-                                <h6 class="mb-1">{{ $rec['title'] }}</h6>
-                                <small>{{ $rec['date'] }}</small>
-                            </div>
-                        </div>
-                    </a>
+                <a href="{{ route('kegiatan.detail', $slugRec) }}" class="text-decoration-none d-block mb-3">
+                    <div class="festival-card {{ $loop->iteration % 2 ? 'festival-card-1' : 'festival-card-2' }}">
+                    
+                    {{-- Gambar full-bleed dari backend --}}
+                    @php
+                        $img = $rec['image_url'] ?? $rec['image_path'] ?? null;
+                        if ($img && !Str::startsWith($img, ['http://','https://','/'])) {
+                            $img = Storage::url($img);
+                        }
+                    @endphp
+                    <img class="festival-image"
+                        src="{{ $img ?? asset('/assets/img/Beranda -  Festival Ekonomi Kreatif & Pekan HAM.png') }}"
+                        alt="{{ $rec['title'] }}"
+                        loading="lazy">
+
+                    {{-- Overlay gradasi --}}
+                    <div class="festival-overlay" aria-hidden="true"></div>
+
+                    {{-- Konten teks --}}
+                    <div class="festival-content">
+                        <h6 class="mb-1">{{ $rec['title'] }}</h6>
+                        <small>{{ $rec['date'] }}</small>
+                    </div>
+                    </div>
+                </a>
                 @endforeach
+
             </div>
         </div>
     </div>
