@@ -26,14 +26,14 @@
                     </li>
                 </ul>
                 
-                <div class="ms-3">
+                {{-- <div class="ms-3">
                     <div class="input-group" style="width: 200px;">
                         <input type="text" class="form-control form-control-sm" placeholder="Pencarian">
                         <button class="btn btn-primary btn-sm" type="button">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                </div>
+                </div>  --}}
             </div>
         </div>
     </nav>
