@@ -2,8 +2,9 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <i class="fas fa-university me-2 text-primary"></i>
-                <span class="fw-bold text-primary">IPB University</span>
+                <!-- <i class="fas fa-university me-2 text-primary"></i>
+                <span class="fw-bold text-primary">IPB University</span> -->
+                <img src="{{ asset('/assets/img/logo.png') }}" alt="" class="footer-logo mb-2" style="width: 120px;">
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
