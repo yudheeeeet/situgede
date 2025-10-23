@@ -382,7 +382,8 @@
                                 
                                 <div class="card-body">
                                     <h5>{{ $e['title'] }}</h5>
-                                    <p class="date">{{ $e['date'] }}</p>
+                                    <!-- hide date -->
+                                    <!-- <p class="date">{{ $e['date'] }}</p> -->
                                 </div>
                             </div>
                         </div>
