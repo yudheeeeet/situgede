@@ -106,7 +106,7 @@
     </div>
   </section>
 
-  <!-- Activities Grid (opsional, bisa dihapus jika hanya mau slider) -->
+  {{-- <!-- Activities Grid (opsional, bisa dihapus jika hanya mau slider) -->
   <section class="activities-section" id="wisata">
     <div class="container">
       <div class="text-center mb-5">
@@ -200,7 +200,7 @@
 
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!-- Activities Slider -->
   <section class="activities-section" id="wisata-slider">

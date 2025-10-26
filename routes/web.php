@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\EventController;
 
 Route::get('/', fn() => view('pages.index'))->name('home');
 Route::get('/explore', function () {
@@ -70,8 +72,13 @@ Route::get('/kegiatan/{slug}', function (string $slug) {
     return view('pages.kegiatan-detail', compact('event', 'recommended', 'slug'));
 })->name('kegiatan.detail');
 Route::get('/statistik', fn() => view('pages.statistik'))->name('statistik');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('news', NewsController::class);
+    Route::resource('events', EventController::class);
+});
