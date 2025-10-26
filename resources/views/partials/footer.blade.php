@@ -22,7 +22,7 @@
                     <p class="mb-2"><i class="fas fa-envelope me-2"></i> info@danau-situgede.id</p>
                 </div>
                 
-                <div class="col-lg-3 mb-4">
+                {{-- <div class="col-lg-3 mb-4">
                     <h5 class="text-white">Fitur Cepat</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#">Tentang Danau</a></li>
@@ -31,7 +31,7 @@
                         <li class="mb-2"><a href="#">Harga Tiket</a></li>
                         <li class="mb-2"><a href="#">Lokasi & Rute</a></li>
                     </ul>
-                </div>
+                </div> --}}
                 
                 <div class="col-lg-3 mb-4">
                     <h5 class="text-white">Sosial Media</h5>

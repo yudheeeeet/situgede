@@ -15,6 +15,6 @@ class DashboardController extends Controller
             'pendingRequests' => 18,
         ];
 
-        return view('dashboard', $data);
+        return view('admin', $data);
     }
 }

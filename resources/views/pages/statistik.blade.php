@@ -248,12 +248,12 @@
                     <h1 class="display-4 fw-bold mb-4">Danau Situgede dalam Angka</h1>
                     <p class="lead mb-4">Destinasi wisata unggulan Bogor dengan pesona alam yang memukau dan berbagai fasilitas modern untuk kenyamanan pengunjung.</p>
                     <div class="d-flex gap-3">
-                        <a href="#statistik" class="btn btn-primary btn-lg">
+                        {{-- <a href="#statistik" class="btn btn-primary btn-lg">
                             <i class="fas fa-chart-line me-2"></i>Lihat Statistik
                         </a>
                         <a href="#wisata" class="btn btn-outline-light btn-lg">
                             <i class="fas fa-map-marker-alt me-2"></i>Jelajahi Wisata
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>

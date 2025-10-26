@@ -295,7 +295,7 @@
     <section class="hero-section" id="beranda">
         <div class="container text-center">
             <h1 class="hero-title">Festival Ekonomi Kreatif & Pekan HAM</h1>
-            <p class="hero-subtitle"><i class="fas fa-calendar-alt me-2"></i>03 - 12 Desember 2025</p>
+            {{-- <p class="hero-subtitle"><i class="fas fa-calendar-alt me-2"></i>03 - 12 Desember 2025</p> --}}
         </div>
         
         <button class="nav-arrows left" onclick="previousSlide()">
