@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}#beranda" data-target-id="beranda">Beranda</a>
+                        <a class="nav-link" href="{{ route('home') }}#berand" data-target-id="beranda">Beranda</a>
                     </li>   
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('statistik') }}" data-target-id="statistik">Statistik & Fakta</a>
