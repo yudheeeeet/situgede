@@ -18,13 +18,14 @@
         </div>
 
         <div class="form-group mb-3">
-            <label for="question_text">Deskripsi</label>
-            <textarea name="desc" id="desc" rows="4"
+            <label for="desc">Deskripsi</label>
+            <textarea name="desc" id="desc" rows="5"
                 class="form-control @error('desc') is-invalid @enderror">{{ old('desc') }}</textarea>
-            @error('question_text')
+            @error('desc')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
+
         <div class="form-group mb-3">
             <label for="exampleInputEmail1" class="form-label">Tambahkan Media</label>
             <input type="file" name="media" class="form-control">
@@ -37,12 +38,14 @@
     </form>
 </div>
 @endsection
-
+@push('scripts')
 <!-- Letakkan semua script di bagian scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="{{ asset('/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin">
 </script>
 <script>
+   
     // Konfigurasi TinyMCE
     tinymce.init({
         selector: '#desc',
@@ -72,3 +75,5 @@
     });
 
 </script>
+@endpush
+

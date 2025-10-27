@@ -55,14 +55,34 @@
                                             {{ Str::limit($item->desc, 50) }}</div>
                                     </td>
                                     <td>
-                                    @if($item->media)
-                                        <img src="{{ $item->image_url }}" alt="{{ $item->title }}"
-                                            class="h-12 w-12 object-cover rounded">
-                                    @else
-                                        <div class="h-12 w-12 bg-gray-200 rounded flex items-center justify-center">
-                                            <span class="text-gray-400 text-xs">No image</span>
-                                        </div>
-                                    @endif
+                                        @if($item->media)
+                                            <img src="{{ asset('storage/' . $item->media) }}"
+                                                alt="{{ $item->judul }}"
+                                                class="img-thumbnail"
+                                                style="height:60px; width:auto; cursor:pointer;"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#imageModal-{{ $item->id }}">
+                                            <!-- Modal Bootstrap -->
+                                            <div class="modal fade" id="imageModal-{{ $item->id }}" tabindex="-1" aria-labelledby="label-{{ $item->id }}" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="label-{{ $item->id }}">{{ $item->judul }}</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    <img src="{{ asset('storage/' . $item->media) }}" alt="{{ $item->judul }}" class="img-fluid rounded">
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        @else
+                                            <div class="h-12 w-12 bg-gray-200 rounded flex items-center justify-center">
+                                                <span class="text-gray-400 text-xs">No image</span>
+                                            </div>
+                                        @endif
+                                    </td>
+
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <a href="{{ route('news.edit', $item) }}"
@@ -97,6 +117,7 @@
 @push('scripts')
     <!-- Page level plugins -->
     <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>

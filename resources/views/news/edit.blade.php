@@ -68,3 +68,39 @@
     </form>
 </div>
 @endsection
+@push('scripts')
+<!-- Letakkan semua script di bagian scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin">
+</script>
+<script>
+    // Konfigurasi TinyMCE
+    tinymce.init({
+        selector: '#desc',
+        plugins: 'advlist lists link image code',
+        toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image | code',
+        setup: function (editor) {
+            editor.on('change', function () {
+                editor.save();
+            });
+        }
+    });
+
+    // Validasi form
+    document.querySelector('form').addEventListener('submit', function (e) {
+        const editor = tinymce.get('desc');
+        const textarea = document.getElementById('desc');
+
+        // Pastikan konten tersinkronisasi
+        textarea.value = editor.getContent();
+
+        // Validasi manual
+        if (editor.getContent().trim() === '') {
+            e.preventDefault();
+            alert('Kolom soal tidak boleh kosong');
+            editor.focus();
+        }
+    });
+
+</script>
+@endpush
