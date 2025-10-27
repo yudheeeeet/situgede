@@ -318,9 +318,8 @@
                     @forelse ($events as $idx => $e)
                     <div class="col-lg-4 col-md-6">
                         <div class="event-card event-card-{{ ($idx % 6) + 1 }}" style="position:relative;">
-                            <!-- <a href="{{ route('events.show', $e->id) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a> -->
-                             <!-- <a href="{{ route('events.detail', $e->slug) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a> -->
-                            <a href="{{ route('events.detail', ['id' => $e->id]) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a>
+                            
+                            <a href="{{ route('explore.detail', ['id' => $e->id]) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a>
 
                             @if($e->media)
                                 <img src="{{ asset('storage/' . $e->media) }}" alt="{{ $e->judul }}" style="width:100%;height:180px;object-fit:cover;border-radius:12px 12px 0 0;">

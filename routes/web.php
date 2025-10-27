@@ -10,11 +10,10 @@ Route::get('/', fn() => view('pages.index'))->name('home');
 // route fe
 Route::get('/explore', [EventController::class, 'explore'])->name('explore');
 // detail kegiatan dengan slug dinamis (pastikan ada field slug unik di tabel events)
-// Route::get('/explorekegiatan/{slug}', [EventController::class, 'exploreDetail'])->name('events.detail');
-// Route::get('/explorekegiatan/{id}', [EventController::class, 'exploreDetail'])->name('events.detail');
-Route::get('/explorekegiatan/{id}', [EventController::class, 'exploreDetail'])->name('events.detail');
+
+Route::get('/explorekegiatan/{id}', [EventController::class, 'exploreDetail'])->name('explore.detail');
 Route::get('/statistik', fn() => view('pages.statistik'))->name('statistik');
-Route::get('/berita', [NewsController::class, 'index'])->name('berita');
+Route::get('/berita', [NewsController::class, 'showberita'])->name('berita');
 
 // route admin
 Route::get('/admin', [DashboardController::class, 'index'])->name('admin');

@@ -387,13 +387,13 @@
             transform: translateX(4px);
         }
 
-        .social-links {
+        /* .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
-        }
+        } */
 
-        .social-links a {
+        /* .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -410,7 +410,7 @@
             background: var(--color-secondary);
             color: var(--color-primary);
             transform: translateY(-3px);
-        }
+        } */
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -497,7 +497,7 @@
             <h6 class="section-subtitle">Berita & Informasi</h6>
             <h2 class="section-title">Berita Situgede</h2>
         </div>
-        <div class="swiper news-swiper">
+        <div class="swiper news-swiper" style="padding-bottom: 100px;padding-top: 100px;">
             <div class="swiper-wrapper">
                 @foreach($news as $item)
                 <div class="swiper-slide">
@@ -522,8 +522,8 @@
                 </div>
                 @endforeach
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next d-none"></div>
+            <div class="swiper-button-prev d-none"></div>
             <div class="swiper-pagination"></div>
         </div>
         <div class="pagination-wrapper">

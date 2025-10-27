@@ -11,10 +11,10 @@ class NewsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+     public function index()
     {
         $news = News::latest()->paginate(10);
-        return view('pages.berita', compact('news'));
+        return view('news.index', compact('news'));
     }
 
     /**
@@ -101,5 +101,11 @@ class NewsController extends Controller
         $news->delete();
 
         return redirect()->route('news.index')->with('success', 'News deleted successfully!');
+    }
+
+    public function showberita()
+    {
+        $news = News::latest()->paginate(10);
+        return view('pages.berita', compact('news'));
     }
 }
