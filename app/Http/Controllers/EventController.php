@@ -102,4 +102,21 @@ class EventController extends Controller
 
         return redirect()->route('events.index')->with('success', 'News deleted successfully!');
     }
+
+    public function explore()
+    {
+        $events = \App\Models\Event::latest()->paginate(10);
+        return view('pages.explorekegiatan', compact('events'));
+    }
+
+    public function exploreDetail($id)
+    {
+        $event = Event::findOrFail($id);
+        // Dua event rekomendasi selain yang sekarang
+        $recommended = Event::where('id', '!=', $id)->latest()->take(2)->get();
+        return view('pages.kegiatan-detail', compact('event', 'recommended'));
+    }
+
+
+
 }

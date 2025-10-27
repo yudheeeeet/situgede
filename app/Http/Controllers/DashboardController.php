@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\News;
 
 use Illuminate\Http\Request;
 
@@ -17,4 +18,11 @@ class DashboardController extends Controller
 
         return view('admin', $data);
     }
+
+    public function berita()
+    {
+        $news = News::latest()->paginate(10);
+        return view('pages.berita', compact('news'));
+    }
+
 }

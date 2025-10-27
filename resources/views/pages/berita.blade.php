@@ -481,7 +481,6 @@
 @endpush
 
 @section('content')
-<!-- Hero Section -->
 <section class="hero-section" id="beranda">
     <div class="hero-content">
         <h1 class="hero-title">Jelajahi Keindahan dan Ketentraman di Danau Situgede</h1>
@@ -492,203 +491,43 @@
     </div>
 </section>
 
-<!-- News Section -->
 <section class="news-section" id="berita">
     <div class="container">
         <div class="section-header">
             <h6 class="section-subtitle">Berita & Informasi</h6>
             <h2 class="section-title">Berita Situgede</h2>
         </div>
-
-        <!-- Swiper Slider -->
         <div class="swiper news-swiper">
             <div class="swiper-wrapper">
-                <!-- Slide 1 -->
+                @foreach($news as $item)
                 <div class="swiper-slide">
                     <div class="news-card">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800" alt="EXIM-IPB University" class="news-card-image">
+                        <img src="{{ $item->media ? asset('storage/'.$item->media) : 'https://via.placeholder.com/800x220?text=No+Image' }}"
+                             alt="{{ $item->judul }}" class="news-card-image">
                         <div class="news-card-body">
                             <div class="news-card-date">
                                 <i class="far fa-calendar-alt"></i>
-                                Juni 16, 2025
+                                {{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('F d, Y') }}
                             </div>
-                            <h5 class="news-card-title">EXIM-IPB University Provinsi IPB University Siap Dipatenkan</h5>
-                            <p class="news-card-excerpt">University menyelenggarakan Pendidikan Percursorii Stansilant Puteri (PKST) IPB University bersama dengan Teknologi SEKTIIP dan disiapkan untuk proses patensilant IPB berhasil sampai 150-1R pada di...</p>
-                            <a href="#" class="news-card-link" onclick="alert('Membuka detail berita'); return false;">
+                            <h5 class="news-card-title">{{ $item->judul }}</h5>
+                            <p class="news-card-excerpt">{{ \Illuminate\Support\Str::limit($item->desc, 120, '...') }}</p>
+                            @if($item->link)
+                            <a href="{{ $item->link }}" class="news-card-link" target="_blank" rel="noopener">
                                 Lihat Selengkapnya
                                 <i class="fas fa-arrow-right"></i>
                             </a>
+                            @endif
                         </div>
                     </div>
                 </div>
-
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <div class="news-card">
-                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800" alt="Workshop Strategic Brand" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-date">
-                                <i class="far fa-calendar-alt"></i>
-                                Juni 19, 2025
-                            </div>
-                            <h5 class="news-card-title">Workshop Menggali IPB University Strategy Global, IPB University Gelar Workshop 'Strategic Brand Communication'</h5>
-                            <p class="news-card-excerpt">Sebuah langkah strategis menjalankan komunikasi global di tingkat global, IPB University menyelenggarakan Workshop Strategic Brand Communication yang mendalam dihadiri dosen dan direktur...</p>
-                            <a href="#" class="news-card-link" onclick="alert('Membuka detail berita'); return false;">
-                                Lihat Selengkapnya
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <div class="news-card">
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800" alt="MoU IPB Pemkab PPU" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-date">
-                                <i class="far fa-calendar-alt"></i>
-                                Juni 30, 2025
-                            </div>
-                            <h5 class="news-card-title">IPB University dan Pemerintah Kabupaten Mandiri Pangon, IPB University dan Pemkab PPU Teken MoU</h5>
-                            <p class="news-card-excerpt">IPB University and Pemerintah Kabupaten Penajam Paser Utara (PPU) began collaboration development Program Kerja bersama (KKN) Tema sesuai MoU (KKN) Reguler (KKN) dan dicentral bersama...</p>
-                            <a href="#" class="news-card-link" onclick="alert('Membuka detail berita'); return false;">
-                                Lihat Selengkapnya
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 4 -->
-                <div class="swiper-slide">
-                    <div class="news-card">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800" alt="Festival Ekonomi Kreatif" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-date">
-                                <i class="far fa-calendar-alt"></i>
-                                Desember 03, 2025
-                            </div>
-                            <h5 class="news-card-title">Festival Ekonomi Kreatif & Pekan HAM di Danau Situgede</h5>
-                            <p class="news-card-excerpt">Danau Situgede akan menggelar Festival Ekonomi Kreatif dan Pekan HAM yang menampilkan berbagai produk UMKM lokal, workshop kreatif, pameran seni, dan diskusi tentang hak asasi manusia...</p>
-                            <a href="#" class="news-card-link" onclick="alert('Membuka detail berita'); return false;">
-                                Lihat Selengkapnya
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 5 -->
-                <div class="swiper-slide">
-                    <div class="news-card">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Ngubek Setu" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-date">
-                                <i class="far fa-calendar-alt"></i>
-                                November 15, 2025
-                            </div>
-                            <h5 class="news-card-title">Ngubek Setu - Aktivitas Mengelilingi Danau Situgede</h5>
-                            <p class="news-card-excerpt">Nikmati pengalaman unik mengelilingi Danau Situgede dengan perahu tradisional. Aktivitas 'Ngubek Setu' menawarkan pemandangan indah danau sambil menikmati kesejukan alam pegunungan Bogor...</p>
-                            <a href="#" class="news-card-link" onclick="alert('Membuka detail berita'); return false;">
-                                Lihat Selengkapnya
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 6 -->
-                <div class="swiper-slide">
-                    <div class="news-card">
-                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800" alt="Yoga Meditasi" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-date">
-                                <i class="far fa-calendar-alt"></i>
-                                Oktober 20, 2025
-                            </div>
-                            <h5 class="news-card-title">Yoga & Meditasi di Tepi Danau Situgede</h5>
-                            <p class="news-card-excerpt">Rasakan ketenangan jiwa dan raga dengan sesi yoga dan meditasi di tepi Danau Situgede. Dengan pemandu berpengalaman dan pemandangan danau yang memukau, aktivitas ini cocok untuk relaksasi...</p>
-                            <a href="#" class="news-card-link" onclick="alert('Membuka detail berita'); return false;">
-                                Lihat Selengkapnya
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 7 -->
-                <div class="swiper-slide">
-                    <div class="news-card">
-                        <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800" alt="Hunting Foto" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-date">
-                                <i class="far fa-calendar-alt"></i>
-                                September 10, 2025
-                            </div>
-                            <h5 class="news-card-title">Hunting Foto & Videografi Danau Situgede</h5>
-                            <p class="news-card-excerpt">Abadikan keindahan Danau Situgede melalui lensa kamera Anda. Event hunting foto dan videografi menghadirkan spot-spot terbaik untuk mengambil gambar sunrise, landscape, dan wildlife...</p>
-                            <a href="#" class="news-card-link" onclick="alert('Membuka detail berita'); return false;">
-                                Lihat Selengkapnya
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 8 -->
-                <div class="swiper-slide">
-                    <div class="news-card">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800" alt="Festival Budaya" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-date">
-                                <i class="far fa-calendar-alt"></i>
-                                Agustus 25, 2025
-                            </div>
-                            <h5 class="news-card-title">Festival Desa Wisata & Budaya Lokal</h5>
-                            <p class="news-card-excerpt">Jelajahi kekayaan budaya lokal masyarakat sekitar Danau Situgede. Festival ini menampilkan tarian tradisional, musik daerah, kuliner khas, dan kerajinan tangan dari pengrajin lokal...</p>
-                            <a href="#" class="news-card-link" onclick="alert('Membuka detail berita'); return false;">
-                                Lihat Selengkapnya
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 9 -->
-                <div class="swiper-slide">
-                    <div class="news-card">
-                        <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?w=800" alt="Memancing" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-date">
-                                <i class="far fa-calendar-alt"></i>
-                                Juli 18, 2025
-                            </div>
-                            <h5 class="news-card-title">Memancing di Danau Situgede</h5>
-                            <p class="news-card-excerpt">Nikmati aktivitas memancing yang menenangkan di Danau Situgede. Danau ini memiliki berbagai jenis ikan air tawar dan menyediakan spot memancing yang nyaman untuk pemula hingga profesional...</p>
-                            <a href="#" class="news-card-link" onclick="alert('Membuka detail berita'); return false;">
-                                Lihat Selengkapnya
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            
-            <!-- Navigation Arrows -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            
-            <!-- Pagination Dots -->
             <div class="swiper-pagination"></div>
         </div>
-
-        <!-- View All Button -->
         <div class="pagination-wrapper">
-            <a href="#" class="btn-view-all" onclick="alert('Menampilkan semua berita...'); return false;">
-                Lihat Semua
-                <i class="fas fa-arrow-right"></i>
-            </a>
+            {{ $news->links() }}
         </div>
     </div>
 </section>
