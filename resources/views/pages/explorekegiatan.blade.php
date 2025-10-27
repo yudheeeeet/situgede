@@ -319,7 +319,6 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="event-card event-card-{{ ($idx % 6) + 1 }}" style="position:relative;">
                             <!-- <a href="{{ route('events.show', $e->id) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a> -->
-                             <!-- <a href="{{ route('events.detail', $e->slug) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a> -->
                             <a href="{{ route('events.detail', ['id' => $e->id]) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a>
 
                             @if($e->media)
