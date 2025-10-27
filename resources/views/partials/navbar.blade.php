@@ -25,6 +25,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('explore') }}" data-target-id="wisata">Wisata</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('berita') }}" data-target-id="wisata">Berita</a>
+                    </li>
                 </ul>
                 
                 {{-- <div class="ms-3">

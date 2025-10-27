@@ -292,198 +292,58 @@
 
 @section('content')
 <!-- Hero Section -->
-    <section class="hero-section" id="beranda">
-        <div class="container text-center">
-            <h1 class="hero-title">Festival Ekonomi Kreatif & Pekan HAM</h1>
-            {{-- <p class="hero-subtitle"><i class="fas fa-calendar-alt me-2"></i>03 - 12 Desember 2025</p> --}}
+<section class="hero-section" id="beranda">
+    <div class="container text-center">
+        <h1 class="hero-title">Festival Ekonomi Kreatif & Pekan HAM</h1>
+    </div>
+    <button class="nav-arrows left" onclick="previousSlide()">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="nav-arrows right" onclick="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</section>
+
+<!-- Events Section -->
+<section class="events-section" id="wisata">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h6 class="text-muted">Event & Festival</h6>
+            <h2 class="section-title">SITUGEDE, BOGOR</h2>
         </div>
-        
-        <button class="nav-arrows left" onclick="previousSlide()">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="nav-arrows right" onclick="nextSlide()">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-    </section>
- <!-- Events Section -->
-    <section class="events-section" id="wisata">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-muted">Event & Festival</h6>
-                <h2 class="section-title">SITUGEDE, BOGOR</h2>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-3 d-none">
-                    <div class="filter-sidebar">
-                        <h5 class="filter-title">Event Date</h5>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="semua" checked>
-                            <label for="semua">Semua</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="januari">
-                            <label for="januari">Januari</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="februari">
-                            <label for="februari">Februari</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="maret">
-                            <label for="maret">Maret</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="april">
-                            <label for="april">April</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="mei">
-                            <label for="mei">Mei</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="juni">
-                            <label for="juni">Juni</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="juli">
-                            <label for="juli">Juli</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="agustus">
-                            <label for="agustus">Agustus</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="september">
-                            <label for="september">September</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="oktober">
-                            <label for="oktober">Oktober</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="november">
-                            <label for="november">November</label>
-                        </div>
-                        <div class="month-checkbox">
-                            <input type="checkbox" id="desember">
-                            <label for="desember">Desember</label>
+
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <div class="row" id="eventsContainer">
+                    @forelse ($events as $idx => $e)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="event-card event-card-{{ ($idx % 6) + 1 }}" style="position:relative;">
+                            <!-- <a href="{{ route('events.show', $e->id) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a> -->
+                             <!-- <a href="{{ route('events.detail', $e->slug) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a> -->
+                            <a href="{{ route('events.detail', ['id' => $e->id]) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a>
+
+                            @if($e->media)
+                                <img src="{{ asset('storage/' . $e->media) }}" alt="{{ $e->judul }}" style="width:100%;height:180px;object-fit:cover;border-radius:12px 12px 0 0;">
+                            @endif
+                            <div class="card-body">
+                                <h5>{{ $e->judul }}</h5>
+                                <p class="date">{{ Str::limit($e->desc, 60) }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="col-lg-9 mx-auto">
-                    <div class="row" id="eventsContainer">
-                        <!-- Example dengan loop -->
-                        @foreach ($events as $idx => $e)
-                        <div class="col-lg-4 col-md-6">
-                            <div class="event-card event-card-{{ ($idx % 6) + 1 }}" data-month="{{ $e['month'] ?? 'desember' }}" style="position:relative;">
-                                <a href="{{ route('kegiatan.detail', $e['slug']) }}" class="event-card-link" aria-label="Buka detail {{ $e['title'] }}"></a>
-                                
-                                <div class="card-body">
-                                    <h5>{{ $e['title'] }}</h5>
-                                    <!-- hide date -->
-                                    <!-- <p class="date">{{ $e['date'] }}</p> -->
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-
-                        <!-- xample tanpa loop -->
-                        <!-- <div class="col-lg-4 col-md-6">
-                            <div class="event-card event-card-1" data-month="desember">
-                                <div class="card-body">
-                                    <h5>Festival Ekonomi Kreatif & Pekan HAM</h5>
-                                    <p class="date">03 - 12 Desember 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 col-md-6">
-                            <div class="event-card event-card-2" data-month="desember">
-                                <div class="card-body">
-                                    <h5>"Ngubek Setu"</h5>
-                                    <p class="date">03 - 12 Desember 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 col-md-6">
-                            <div class="event-card event-card-3" data-month="desember">
-                                <div class="card-body">
-                                    <h5>Festival Desa Wisata & Budaya Lokal</h5>
-                                    <p class="date">03 - 12 Desember 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 col-md-6">
-                            <div class="event-card event-card-4" data-month="desember">
-                                <div class="card-body">
-                                    <h5>Lukis Alam (Melukis di Tepi Danau)</h5>
-                                    <p class="date">03 - 12 Desember 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 col-md-6">
-                            <div class="event-card event-card-5" data-month="desember">
-                                <div class="card-body">
-                                    <h5>Yoga & Meditasi</h5>
-                                    <p class="date">03 - 12 Desember 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 col-md-6">
-                            <div class="event-card event-card-6" data-month="desember">
-                                <div class="card-body">
-                                    <h5>Hunting Foto & Videografi</h5>
-                                    <p class="date">03 - 12 Desember 2025</p>
-                                </div>
-                            </div>
-                        </div> -->
-
+                    @empty
+                    <div class="col-12">
+                        <p class="text-center">Belum ada event.</p>
                     </div>
-                    
-                    <!-- Pagination -->
-                    <nav class="pagination-custom">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item">
-                                <a class="page-link" href="#" onclick="previousPage()">
-                                    <i class="fas fa-chevron-left"></i>
-                                </a>
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">4</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">5</a>
-                            </li>
-                            <li class="page-item disabled">
-                                <span class="page-link">...</span>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">22</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" onclick="nextPage()">
-                                    <i class="fas fa-chevron-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    @endforelse
                 </div>
+
+                <!-- Pagination -->
+                <nav class="pagination-custom mt-4">
+                    {{ $events->links() }}
+                </nav>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 @endsection
