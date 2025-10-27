@@ -5,7 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\EventController;
 
-Route::get('/', fn() => view('pages.index'))->name('home');
+Route::get('/', fn() => view('pages.index'))->name('dashboard');
 
 // route fe
 Route::get('/explore', [EventController::class, 'explore'])->name('explore');
@@ -20,7 +20,6 @@ Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('news', NewsController::class);
