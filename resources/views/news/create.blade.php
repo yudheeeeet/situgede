@@ -47,7 +47,7 @@
     </form>
 </div>
 @endsection
-
+@push('scripts')
 <!-- Letakkan semua script di bagian scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin">
@@ -82,3 +82,4 @@
     });
 
 </script>
+@endpush

@@ -227,9 +227,9 @@
                 <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
                    data-title="Memancing"
                    data-desc="Nikmati Pengalaman Memancing di Danau Situgede"
-                   data-img="https://dinggasukapaus.github.io/code/img/beranda/galeri-1.png">
+                   data-img="{{ asset('img/1.jpg') }}">
                   <div class="activity-card card-bg-1"
-                       data-bg="https://dinggasukapaus.github.io/code/img/beranda/galeri-1.png">
+                       data-bg="{{ asset('img/1.jpg') }}">
                     <div class="card-body">
                       <h5>Memancing</h5>
                       <p>Nikmati Pengalaman Memancing di Danau Situgede</p>
@@ -240,14 +240,14 @@
 
               <div class="col-lg-4 col-md-6">
                 <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Perahu Wisata"
-                   data-desc="Berlibur Seru dengan Perahu Tradisional"
-                   data-img="https://dinggasukapaus.github.io/code/img/beranda/galeri-2.png">
-                  <div class="activity-card card-bg-2"
-                       data-bg="https://dinggasukapaus.github.io/code/img/beranda/galeri-2.png">
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/2.jpg') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/2.jpg') }}">
                     <div class="card-body">
-                      <h5>Perahu Wisata</h5>
-                      <p>Berlibur Seru dengan Perahu Tradisional</p>
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
                     </div>
                   </div>
                 </a>
@@ -257,9 +257,114 @@
                 <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
                    data-title="Piknik"
                    data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="https://dinggasukapaus.github.io/code/img/beranda/galeri-3.png">
+                   data-img="{{ asset('img/3.jpg') }}">
                   <div class="activity-card card-bg-3"
-                       data-bg="https://dinggasukapaus.github.io/code/img/beranda/galeri-3.png">
+                       data-bg="{{ asset('img/3.jpg') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/4.jpg') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/4.jpg') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/5.jpg') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/5.jpg') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/6.jpg') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/6.jpg') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/7.png') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/7.png') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/8.png') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/8.png') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/9.png') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/9.png') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/10.png') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/10.png') }}">
                     <div class="card-body">
                       <h5>Piknik</h5>
                       <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
@@ -277,9 +382,9 @@
                 <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
                    data-title="Spot Selfie"
                    data-desc="Abadikan Momen di Spot Foto Favorit"
-                   data-img="https://dinggasukapaus.github.io/code/img/beranda/galeri-4.png">
+                   data-img="{{ asset('img/1.png') }}">
                   <div class="activity-card card-bg-4"
-                       data-bg="https://dinggasukapaus.github.io/code/img/beranda/galeri-4.png">
+                       data-bg="{{ asset('img/1.png') }}">
                     <div class="card-body">
                       <h5>Spot Selfie</h5>
                       <p>Abadikan Momen di Spot Foto Favorit</p>
@@ -290,14 +395,14 @@
 
               <div class="col-lg-4 col-md-6">
                 <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Kuliner & UMKM"
-                   data-desc="Cicipi Kuliner Lokal dan Produk UMKM Sekitar"
-                   data-img="https://dinggasukapaus.github.io/code/img/beranda/galeri-5.png">
-                  <div class="activity-card card-bg-5"
-                       data-bg="https://dinggasukapaus.github.io/code/img/beranda/galeri-5.png">
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/2.jpg') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/2.jpg') }}">
                     <div class="card-body">
-                      <h5>Kuliner & UMKM</h5>
-                      <p>Cicipi Kuliner Lokal dan Produk UMKM Sekitar</p>
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
                     </div>
                   </div>
                 </a>
@@ -305,18 +410,110 @@
 
               <div class="col-lg-4 col-md-6">
                 <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Trekking"
-                   data-desc="Eksplorasi Hutan & Jalur Pinggir Danau"
-                   data-img="https://dinggasukapaus.github.io/code/img/beranda/galeri-6.png">
-                  <div class="activity-card card-bg-6"
-                       data-bg="https://dinggasukapaus.github.io/code/img/beranda/galeri-6.png">
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/3.jpg') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/3.jpg') }}">
                     <div class="card-body">
-                      <h5>Trekking</h5>
-                      <p>Eksplorasi Hutan & Jalur Pinggir Danau</p>
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
                     </div>
                   </div>
                 </a>
               </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/4.jpg') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/4.jpg') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/5.jpg') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/5.jpg') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/6.jpg') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/6.jpg') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/7.png') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/7.png') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/8.png') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/8.png') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
+                   data-title="Piknik"
+                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
+                   data-img="{{ asset('img/9.png') }}">
+                  <div class="activity-card card-bg-3"
+                       data-bg="{{ asset('img/9.png') }}">
+                    <div class="card-body">
+                      <h5>Piknik</h5>
+                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
             </div>
           </div>
 
