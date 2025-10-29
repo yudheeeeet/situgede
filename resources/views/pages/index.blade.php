@@ -92,6 +92,128 @@
     .activity-card { height: 250px; margin-bottom: 20px; }
   }
 
+  .event-card {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .event-card-1 { 
+            background: linear-gradient(135deg, rgba(255, 68, 0, 0.12) 0%, rgba(255, 140, 0, 0) 100%);
+            background-size: cover; 
+        }
+        
+        .event-card-2 { 
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0) 0%, rgba(185, 28, 28, 0) 100%);
+            background-size: cover; 
+        }
+        
+        .event-card-3 { 
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0) 0%, rgba(21, 128, 60, 0) 100%);            
+                        background-size: cover; 
+                    }
+                    
+        .event-card-4 { 
+            background: linear-gradient(135deg, rgba(59, 131, 246, 0) 0%, rgba(37, 100, 235, 0) 100%);            
+            background-size: cover; 
+        }
+        
+        .event-card-5 { 
+            background: linear-gradient(135deg, rgba(169, 85, 247, 0) 0%, rgba(146, 51, 234, 0) 100%);            
+            background-size: cover; 
+        }
+        
+        .event-card-6 { 
+            background: linear-gradient(135deg, rgba(245, 159, 11, 0) 0%, rgba(217, 119, 6, 0) 100%);            
+            background-size: cover; 
+        }
+        
+        .event-card .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: white;
+            padding: 40px 20px 20px;
+        }
+        
+        .event-card h5 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .event-card .date {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .event-card-link {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+        }
+        
+        .pagination-custom {
+            margin-top: 50px;
+        }
+        
+        .pagination-custom .page-link {
+            border: none;
+            color: #4a5568;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-custom .page-link:hover {
+            background: #1e40af;
+            color: white;
+        }
+        
+        .pagination-custom .page-item.active .page-link {
+            background: #1e40af;
+            color: white;
+        }
+        
+        .events-section {
+            padding: 80px 0;
+        }
+        
+        
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-arrows {
+                display: none;
+            }
+            
+            .filter-sidebar {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .event-card {
+                height: 250px;
+            }
+        }
+
   /* indikator carousel sedikit dinaikkan */
   #activitiesCarousel .carousel-indicators { margin-bottom: 0 !important; }
 </style>
@@ -106,7 +228,7 @@
     </div>
   </section>
 
-  {{-- <!-- Activities Grid (opsional, bisa dihapus jika hanya mau slider) -->
+ <!-- Activities Grid (opsional, bisa dihapus jika hanya mau slider) -->
   <section class="activities-section" id="wisata">
     <div class="container">
       <div class="text-center mb-5">
@@ -200,7 +322,7 @@
 
       </div>
     </div>
-  </section> --}}
+  </section>
 
   <!-- Activities Slider -->
   <section class="activities-section" id="wisata-slider">
@@ -210,326 +332,39 @@
         <h2 class="section-title">SITUGEDE, BOGOR</h2>
       </div>
 
-      <div id="activitiesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#activitiesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#activitiesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <div class="row" id="eventsContainer">
+                    @forelse ($events as $idx => $e)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="event-card event-card-{{ ($idx % 6) + 1 }}" style="position:relative;">
+                            
+                            <a href="{{ route('explore.detail', ['id' => $e->id]) }}" class="event-card-link" aria-label="Buka detail {{ $e->judul }}"></a>
+
+                            @if($e->media)
+                                <img src="{{ asset('storage/' . $e->media) }}" alt="{{ $e->judul }}" style="width:100%;height:180px;object-fit:cover;border-radius:12px 12px 0 0;">
+                            @endif
+                            <div class="card-body">
+                                <h5>{{ $e->judul }}</h5>
+                                <p class="date">{!! Str::limit($e->desc, 60) !!}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @empty
+                    <div class="col-12">
+                        <p class="text-center">Belum ada event.</p>
+                    </div>
+                    @endforelse
+                </div>
+
+                <!-- Pagination -->
+                <nav class="pagination-custom mt-4">
+                    {{ $events->links() }}
+                </nav>
+            </div>
         </div>
-
-        <!-- Slides -->
-        <div class="carousel-inner">
-
-          <!-- Slide 1 -->
-          <div class="carousel-item active">
-            <div class="row g-4">
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Memancing"
-                   data-desc="Nikmati Pengalaman Memancing di Danau Situgede"
-                   data-img="{{ asset('img/1.jpg') }}">
-                  <div class="activity-card card-bg-1"
-                       data-bg="{{ asset('img/1.jpg') }}">
-                    <div class="card-body">
-                      <h5>Memancing</h5>
-                      <p>Nikmati Pengalaman Memancing di Danau Situgede</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/2.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/2.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/3.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/3.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/4.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/4.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/5.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/5.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/6.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/6.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/7.png') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/7.png') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/8.png') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/8.png') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/9.png') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/9.png') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/10.png') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/10.png') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-item">
-            <div class="row g-4">
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Spot Selfie"
-                   data-desc="Abadikan Momen di Spot Foto Favorit"
-                   data-img="{{ asset('img/1.png') }}">
-                  <div class="activity-card card-bg-4"
-                       data-bg="{{ asset('img/1.png') }}">
-                    <div class="card-body">
-                      <h5>Spot Selfie</h5>
-                      <p>Abadikan Momen di Spot Foto Favorit</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/2.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/2.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/3.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/3.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/4.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/4.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/5.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/5.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/6.jpg') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/6.jpg') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/7.png') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/7.png') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/8.png') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/8.png') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <a href="#previewModal" data-bs-toggle="modal" data-bs-target="#previewModal"
-                   data-title="Piknik"
-                   data-desc="Bersantai & Piknik di Bawah Rindangnya Pohon"
-                   data-img="{{ asset('img/9.png') }}">
-                  <div class="activity-card card-bg-3"
-                       data-bg="{{ asset('img/9.png') }}">
-                    <div class="card-body">
-                      <h5>Piknik</h5>
-                      <p>Bersantai & Piknik di Bawah Rindangnya Pohon</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#activitiesCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#activitiesCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
     </div>
+
   </section>
 
   <!-- Preview Modal -->

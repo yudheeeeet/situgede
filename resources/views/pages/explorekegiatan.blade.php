@@ -151,38 +151,32 @@
         }
         
         .event-card-1 { 
-            background: linear-gradient(135deg, rgba(255, 68, 0, 0.12) 0%, rgba(255, 140, 0, 0) 100%),
-                        url('/assets/img/Beranda -  Festival Ekonomi Kreatif & Pekan HAM.png');
+            background: linear-gradient(135deg, rgba(255, 68, 0, 0.12) 0%, rgba(255, 140, 0, 0) 100%);
             background-size: cover; 
         }
         
         .event-card-2 { 
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0) 0%, rgba(185, 28, 28, 0) 100%),
-                        url('/assets/img/Beranda -  Ngubek Setu.png');
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0) 0%, rgba(185, 28, 28, 0) 100%);
             background-size: cover; 
         }
         
         .event-card-3 { 
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0) 0%, rgba(21, 128, 60, 0) 100%),
-                        url('/assets/img/Beranda -  Festival Ekonomi Kreatif & Pekan HAM.png');            
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0) 0%, rgba(21, 128, 60, 0) 100%);            
                         background-size: cover; 
                     }
                     
         .event-card-4 { 
-            background: linear-gradient(135deg, rgba(59, 131, 246, 0) 0%, rgba(37, 100, 235, 0) 100%),
-            url('/assets/img/Beranda -  Lukis Alam (Melukis di Tepi Danau).png');            
+            background: linear-gradient(135deg, rgba(59, 131, 246, 0) 0%, rgba(37, 100, 235, 0) 100%);            
             background-size: cover; 
         }
         
         .event-card-5 { 
-            background: linear-gradient(135deg, rgba(169, 85, 247, 0) 0%, rgba(146, 51, 234, 0) 100%),
-            url('/assets/img/Beranda -  Yoga & Meditasi.png');            
+            background: linear-gradient(135deg, rgba(169, 85, 247, 0) 0%, rgba(146, 51, 234, 0) 100%);            
             background-size: cover; 
         }
         
         .event-card-6 { 
-            background: linear-gradient(135deg, rgba(245, 159, 11, 0) 0%, rgba(217, 119, 6, 0) 100%),
-            url('/assets/img/Beranda -  Hunting Foto & Videografi.png');            
+            background: linear-gradient(135deg, rgba(245, 159, 11, 0) 0%, rgba(217, 119, 6, 0) 100%);            
             background-size: cover; 
         }
         
@@ -326,7 +320,7 @@
                             @endif
                             <div class="card-body">
                                 <h5>{{ $e->judul }}</h5>
-                                <p class="date">{{ Str::limit($e->desc, 60) }}</p>
+                                <p class="date">{!! Str::limit($e->desc, 60) !!}</p>
                             </div>
                         </div>
                     </div>

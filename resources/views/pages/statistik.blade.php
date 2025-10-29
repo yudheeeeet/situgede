@@ -319,13 +319,13 @@
             <!-- UMKM Statistics -->
             <div class="col-lg-4 mb-4" data-aos="fade-left">
                 <div class="event-stats">
-                    <h4 class="mb-4">
+                    <h4 class="mb-1">
                         <i class="fas fa-store text-success me-2"></i>
                         Statistik UMKM Sekitar Danau
                     </h4>
-                    <canvas id="umkmChart" ></canvas>
+                    <canvas id="umkmChart"></canvas>
                     
-                    <div class="mt-4">
+                    <div class="mt-4 d-none">
                         <h6><i class="fas fa-calendar-check text-warning me-2"></i>Event & Sosial</h6>
                         <div class="d-flex justify-content-between align-items-center mb-2 p-2 bg-light rounded">
                             <span><i class="fas fa-users text-primary me-2"></i>Participasi Komunitas:</span>

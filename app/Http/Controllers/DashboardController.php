@@ -24,5 +24,10 @@ class DashboardController extends Controller
         $news = News::latest()->paginate(10);
         return view('pages.berita', compact('news'));
     }
+    public function exploreonindex()
+    {
+        $events = \App\Models\Event::latest()->paginate(10);
+        return view('pages.index', compact('events'));
+    }
 
 }

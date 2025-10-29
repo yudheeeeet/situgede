@@ -5,10 +5,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\EventController;
 
-Route::get('/', fn() => view('pages.index'))->name('dashboard');
+// Route::get('/', fn() => view('pages.index'))->name('dashboard');
 
 // route fe
 Route::get('/explore', [EventController::class, 'explore'])->name('explore');
+Route::get('/', [DashboardController::class, 'exploreonindex'])->name('exploreonindex');
 // detail kegiatan dengan slug dinamis (pastikan ada field slug unik di tabel events)
 
 Route::get('/explorekegiatan/{id}', [EventController::class, 'exploreDetail'])->name('explore.detail');
