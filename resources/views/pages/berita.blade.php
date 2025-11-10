@@ -510,7 +510,7 @@
                                 {{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('F d, Y') }}
                             </div>
                             <h5 class="news-card-title">{{ $item->judul }}</h5>
-                            <p class="news-card-excerpt">{{ \Illuminate\Support\Str::limit($item->desc, 120, '...') }}</p>
+                            <p class="news-card-excerpt">{!! \Illuminate\Support\Str::limit($item->desc, 120, '...') !!}</p>
                             @if($item->link)
                             <a href="{{ $item->link }}" class="news-card-link" target="_blank" rel="noopener">
                                 Lihat Selengkapnya
